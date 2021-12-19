@@ -36,3 +36,20 @@
     transform: rotate(360deg);
   }
 }
+
+
+.bg-color{
+  background-color: #0e2333;
+}
+
+.bg-color-sm{
+  background-color: #d81f47;
+}
+
+.text-color{
+  color: #d81f47;
+}
+
+.custom-shadow{
+  box-shadow: 4px 4px 16px 4px rgba(74, 147, 219, 0.178);
+}
