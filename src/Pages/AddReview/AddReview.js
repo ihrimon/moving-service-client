@@ -8,7 +8,7 @@ const AddReview = () => {
     const { user } = useAuth();
 
     const onSubmit = data => {
-        axios.post('http://localhost:4000/reviews', data)
+        axios.post('https://peaceful-bastion-73157.herokuapp.com/reviews', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Review Successfully Added')

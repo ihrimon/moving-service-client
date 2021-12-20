@@ -1,0 +1,10 @@
+.review-banner{
+    /* background-image: url(../../../images/banner-review.png);  */
+    background: rgba(0, 0, 0, .6) url(../../../images/banner-review.png); 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 70px 0;
+    background-blend-mode: darken;
+}

@@ -11,13 +11,13 @@ const Services = () => {
     // const cartIcon = <FontAwesomeIcon icon={faCartArrowDown} />
 
     useEffect(() => {
-        fetch('http://localhost:4000/services')
+        fetch('https://peaceful-bastion-73157.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data));
     }, []);
 
     const handleAddToCart = data => {
-        fetch('http://localhost:4000/orders', {
+        fetch('https://peaceful-bastion-73157.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -44,31 +44,21 @@ const Services = () => {
                 <h6 className="mb-4 text-center theme-color fw-bold">We offier differnt services</h6>
                 <h2 className="mb-4 text-center theme-color fw-bold">OUR AWESOME SERVICES</h2>
 
-                <div className="row row-cols-1 row-cols-md-3 g-4">
+                <div className="row row-cols-1 row-cols-md-3 g-5 mx-lg-5">
                     {
                         services.map(service =>
-                            <div className="col-lg-4 col-12 text-start" key={service._id}>
-                                <div class="card border-0 px-2 mb-3 custom-shadow" style={{maxWidth: "540px"}}>
-                                    <div class="row align-items-center g-0">
-                                        <div class="col-md-2">
-                                            <img src={service.img} class="img-fluid" alt="..."/>
-                                        </div>
-                                        <div class="col-md-10">
-                                            <div class="card-body">
-                                                <h5 class="card-title text-color">{service.name}</h5>
-                                                <ShowMoreText
-                                                lines={2}
-                                                more='Read more'
-                                                less='Show less'
-                                                anchorClass=''
-                                                expanded={false}
-                                                className='my-3'
-                                            >
-                                                <p>{service.description},</p>
-                                         
-                                                </ShowMoreText>
-                                                <button onClick={handleAddToCart} service={service} className='btn btn-sm bg-color text-light' type='submit'>Add to Cart</button>
-                                            </div>
+                            <div className="col-lg-4 col-12" key={service._id}>
+                                <div className="card border-0 px-2 mb-3 custom-shadow" style={{ maxWidth: "540px" }}>
+                                    <div className="row align-items-center justify-content-center g-0 py-4">
+
+                                        <div className="card-body px-4">
+                                            <img src={service.icon} className="img-fluid w-25" alt="..." />
+                                            <h5 className="card-title mt-3">{service.name}</h5>
+
+                                            <p>{service.description}</p>
+                                            <Link to={`/addCart/${service._id}`}>
+                                                <button className="btn bg-color-sm rounded-pill text-light" service={service}> <span className="ms-2">View Details</span></button>
+                                            </Link>
                                         </div>
                                     </div>
                                 </div>
