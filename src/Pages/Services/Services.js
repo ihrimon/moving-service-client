@@ -41,14 +41,13 @@ const Services = () => {
     return (
         <div>
             <div className="container p-5 my-3">
-                <h6 className="mb-4 text-center theme-color fw-bold">We offier differnt services</h6>
                 <h2 className="mb-4 text-center theme-color fw-bold">OUR AWESOME SERVICES</h2>
 
                 <div className="row row-cols-1 row-cols-md-3 g-5 mx-lg-5">
                     {
                         services.map(service =>
                             <div className="col-lg-4 col-12" key={service._id}>
-                                <div className="card border-0 px-2 mb-3 custom-shadow" style={{ maxWidth: "540px" }}>
+                                <div className="card border-0 px-2 mb-3 custom-shadow hover border-radius">
                                     <div className="row align-items-center justify-content-center g-0 py-4">
 
                                         <div className="card-body px-4">

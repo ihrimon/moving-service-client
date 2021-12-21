@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
@@ -7,6 +7,7 @@ const Register = () => {
     const { user, registerUser, signInWithGoogle, isLoading, authError } = useAuth();
 
     const navigate = useNavigate();
+    const location = useLocation()
 
     const handleOnChange = e => {
         const field = e.target.name;
@@ -25,8 +26,8 @@ const Register = () => {
         e.preventDefault();
     }
 
-    const handleGoogleSignIn = (navigate) => {
-        signInWithGoogle(navigate);
+    const handleGoogleSignIn = () => {
+        signInWithGoogle(location, navigate);
     }
 
     return (

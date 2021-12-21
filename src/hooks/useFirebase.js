@@ -15,14 +15,15 @@ const useFirebase = () => {
     // login process with google
     const googleProvider = new GoogleAuthProvider();
 
-    const signInWithGoogle = (navigate) => {
+    const signInWithGoogle = (location, navigate) => {
         setIsLoading(true);
         signInWithPopup(auth, googleProvider)
             .then((result) => {
                 const user = result.user;
                 saveUser(user.email, user.displayName, 'PUT')
                 setAuthError('');
-                navigate('/');
+                const destination = location?.state?.from || '/';
+                navigate(destination);
             }).catch((error) => {
                 setAuthError(error.message);
             })

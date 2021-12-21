@@ -3,8 +3,8 @@ import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import './AddCart.css'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faShippingFast, faFileInvoiceDollar, faCog, faHeadset, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShippingFast, faFileInvoiceDollar, faCog, faHeadset, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 
 const AddCart = () => {
     const { serviceId } = useParams();
@@ -12,11 +12,11 @@ const AddCart = () => {
     const { register, handleSubmit, reset } = useForm();
     const { user } = useAuth();
 
-    // const shippingIcon = <FontAwesomeIcon icon={faShippingFast} />
-    // const deliveryIcon = <FontAwesomeIcon icon={faFileInvoiceDollar} />
-    // const GuaranteeIcon = <FontAwesomeIcon icon={faCog} />
-    // const supportIcon = <FontAwesomeIcon icon={faHeadset} />
-    // const submitIcon = <FontAwesomeIcon icon={faCheckCircle} />
+    const shippingIcon = <FontAwesomeIcon icon={faShippingFast} />
+    const deliveryIcon = <FontAwesomeIcon icon={faFileInvoiceDollar} />
+    const GuaranteeIcon = <FontAwesomeIcon icon={faCog} />
+    const supportIcon = <FontAwesomeIcon icon={faHeadset} />
+    const submitIcon = <FontAwesomeIcon icon={faCheckCircle} />
 
     useEffect(() => {
         fetch(`https://peaceful-bastion-73157.herokuapp.com/services/${serviceId}`)
@@ -60,31 +60,32 @@ const AddCart = () => {
                             <p>{service.overview}</p>
                             <h5>Service Charge: ${service.price}</h5>
                         </div>
-                        <div className="row row-cols-2 row-cols-lg-4 g-3 g-lg-4 mt-3">
+                        {/* Delivery Service */}
+                        <div className="container mx-auto row row-cols-2 row-cols-lg-4 g-3 g-lg-4 mt-3">
                             <div className="col">
                                 <div className="border-end">
-                                    <h1 className="theme-color"></h1>
-                                    <h6>Free Shipping</h6>
+                                    <h1 className="text-color">{shippingIcon}</h1>
+                                    <h6>Fastest Deliver</h6>
                                     <small>Free for first orders</small>
                                 </div>
                             </div>
                             <div className="col">
                                 <div className="border-end">
-                                    <h1 className="theme-color"></h1>
+                                    <h1 className="text-color">{deliveryIcon}</h1>
                                     <h6>Payment On Delivery</h6>
                                     <small>Cash on delivery option</small>
                                 </div>
                             </div>
                             <div className="col">
                                 <div className="border-end">
-                                    <h1 className="theme-color"></h1>
+                                    <h1 className="text-color">{GuaranteeIcon}</h1>
                                     <h6>Free Guarantee</h6>
                                     <small>30 Days Money Back</small>
                                 </div>
                             </div>
                             <div className="col">
                                 <div>
-                                    <h1 className="theme-color"></h1>
+                                    <h1 className="text-color">{supportIcon}</h1>
                                     <h6>24/7 Online Support</h6>
                                     <small>We have support 24/7</small>
                                 </div>

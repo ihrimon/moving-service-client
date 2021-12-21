@@ -1,14 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import img from '../../images/subscription.png';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faShippingFast, faFileInvoiceDollar, faCog, faHeadset } from '@fortawesome/free-solid-svg-icons';
+import img from '../../images/about.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShippingFast, faFileInvoiceDollar, faCog, faHeadset } from '@fortawesome/free-solid-svg-icons';
 
 const About = () => {
-    // const shippingIcon = <FontAwesomeIcon icon={faShippingFast} />
-    // const deliveryIcon = <FontAwesomeIcon icon={faFileInvoiceDollar} />
-    // const GuaranteeIcon = <FontAwesomeIcon icon={faCog} />
-    // const supportIcon = <FontAwesomeIcon icon={faHeadset} />
+    const shippingIcon = <FontAwesomeIcon icon={faShippingFast} />
+    const deliveryIcon = <FontAwesomeIcon icon={faFileInvoiceDollar} />
+    const GuaranteeIcon = <FontAwesomeIcon icon={faCog} />
+    const supportIcon = <FontAwesomeIcon icon={faHeadset} />
 
 
 
@@ -17,8 +16,8 @@ const About = () => {
             <div>
                 <div className="border-radius bg-light py-3">
                     <div className="d-flex flex-lg-row flex-column align-items-center">
-                        <div className="col-12 pt-5 pt-lg-0 text-light text-left color-theme">
-                            <h1 className="mt-3 w-75 mx-auto text-color fw-bold" >About Us</h1>
+                        <div className="col-12 pt-lg-0 text-light text-left">
+                            <h1 className="w-75 mx-auto text-color fw-bold" >About Us</h1>
                         </div>
                     </div>
                 </div>
@@ -37,36 +36,36 @@ const About = () => {
             </div>
 
             {/* Delivery Service */}
-            {/* <div className="container mx-auto row row-cols-2 row-cols-lg-4 g-3 g-lg-4 mt-3">
+            <div className="container mx-auto row row-cols-2 row-cols-lg-4 g-3 g-lg-4 mt-3">
                 <div className="col">
                     <div className="border-end">
                         <h1 className="text-color">{shippingIcon}</h1>
-                        <h6>Free Shipping</h6>
+                        <h5>Fastest Deliver</h5>
                         <small>Free for first orders</small>
                     </div>
                 </div>
                 <div className="col">
                     <div className="border-end">
                         <h1 className="text-color">{deliveryIcon}</h1>
-                        <h6>Payment On Delivery</h6>
+                        <h5>Payment On Delivery</h5>
                         <small>Cash on delivery option</small>
                     </div>
                 </div>
                 <div className="col">
                     <div className="border-end">
                         <h1 className="text-color">{GuaranteeIcon}</h1>
-                        <h6>Free Guarantee</h6>
+                        <h5>Free Guarantee</h5>
                         <small>30 Days Money Back</small>
                     </div>
                 </div>
                 <div className="col">
                     <div>
                         <h1 className="text-color">{supportIcon}</h1>
-                        <h6>24/7 Online Support</h6>
+                        <h5>24/7 Online Support</h5>
                         <small>We have support 24/7</small>
                     </div>
                 </div>
-            </div> */}
+            </div>
         </div>
 
     );

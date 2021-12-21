@@ -1,29 +1,21 @@
 .img-banner{
-    background-image: url(../../../images/banner.png); 
+    background: rgba(0, 0, 0, .6) url(../../../images/banner.png); 
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 150px 0;
+    padding: 220px 0;
+    background-blend-mode: darken;
 }
 
-.color-theme{
-    color: white;
-    padding: 20px 20px;    
-    border-radius: 30px;
+.title{
+    font-size: 70px;
+    font-weight: 900;
 }
 
-.text-stroke {
-    text-shadow: 6px 1px #e8604c;
-}
-
-.text-size{
-    font-size: 4rem;
-    font-weight: 700;
-}
-
-.theme-button{
-    background-color: #e8604c;
-    color: white;
-    border-radius: 10px;
-}
+@media only screen and (max-width: 768px) {
+    .title{
+        font-size: 40px;
+    }
+    };
+    

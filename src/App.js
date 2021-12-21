@@ -28,13 +28,13 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="home" element={<Home />} />
             <Route path="services" element={<Services />} />
-            <Route path="addCart/:serviceId" element={<AddCart />} />
+            <Route path="addCart/:serviceId" element={<PrivateRoute><AddCart /></PrivateRoute>} />
 
             <Route path="about" element={<About />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
             <Route path="myOrders" element={<PrivateRoute><MyOrders /></PrivateRoute>} />
-            <Route path="review" element={<AddReview />} />
+            <Route path="review" element={<PrivateRoute><AddReview /></PrivateRoute>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer></Footer>

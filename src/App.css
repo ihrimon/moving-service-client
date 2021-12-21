@@ -53,3 +53,27 @@
 .custom-shadow{
   box-shadow: 4px 4px 16px 4px rgba(142, 143, 145, 0.178);
 }
+
+.border-radius{
+  border-radius: 20px;
+}
+
+.hover{
+  transition: all 0.8s;
+}
+.hover:hover{
+  background-color: #d81f47;
+  color: white;
+}
+
+.hover:hover h1{
+  color: white;
+}
+
+.hover button{
+  transition: all 0.8s;
+}
+
+.hover:hover button{
+  background-color: #0e2333;
+}

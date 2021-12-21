@@ -1,11 +1,11 @@
 import React from 'react';
 import logo from '../../images/logo.png';
 import { NavLink } from 'react-router-dom';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
-    // const phoneIcon = <FontAwesomeIcon icon={faPhone} />
+    const phoneIcon = <FontAwesomeIcon icon={faPhone} />
 
     return (
         <div className="bg-color pb-5 mt-5 text-color">
@@ -41,7 +41,7 @@ const Footer = () => {
                                 <li className="text-start mb-1 fw-bold mb-2">Get Customer Support</li>
                                 <li className="text-start mt-1 mb-2" style={{ lineHeight: 1.6 }}>Our team is always available 24/7 to answer your queries</li>
                                 <li className="text-start mt-1">
-                                    <button className="rounded-pill btn bg-color-sm text-light my-2 px-3" type="tel"><span className="ms-2">+88012345678</span></button>
+                                    <button className="rounded-pill btn bg-color-sm text-light my-2 px-3" type="tel">{phoneIcon}<span className="ms-2">+88012345678</span></button>
                                 </li>
                             </ul>
                         </div>

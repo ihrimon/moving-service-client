@@ -2,21 +2,21 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import logo from '../../images/logo.png';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 const Navigation = () => {
     const { user, logOut } = useAuth();
 
-    // const loginIcon = <FontAwesomeIcon icon={faSignInAlt} />
-    // const logoutIcon = <FontAwesomeIcon icon={faSignOutAlt} />
+    const loginIcon = <FontAwesomeIcon icon={faSignInAlt} />
+    const logoutIcon = <FontAwesomeIcon icon={faSignOutAlt} />
 
     const activeStyle = {
         fontWeight: "bold",
         color: "#17c6aa"
     };
     return (
-        <nav className="navbar navbar-expand-lg navbar-light shadow-bottom">
+        <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container py-3">
                 <NavLink to="/">
                     <img src={logo} width="150px" alt="" />
@@ -61,9 +61,9 @@ const Navigation = () => {
 
                         <li className="nav-item">
                             {(user.displayName) && (user.photoURL) || (user?.email) ?
-                                <button onClick={logOut} className="nav-link btn bg-color-sm px-3 fw-bold text-light"><span>Log Out</span></button> :
-                                <NavLink className="nav-link btn bg-color-sm px-5 fw-bold text-light" to="login">Login</NavLink>
-                                // <NavLink to="/login"><button className="" type="submit" ><span className="ms-2">Login</span></button></NavLink>
+                                <button onClick={logOut} className="nav-link btn bg-color-sm px-3 fw-bold text-light">{logoutIcon}<span>Log Out</span></button> :
+                                // <NavLink className="nav-link btn bg-color-sm px-5 fw-bold text-light" to="login">Login</NavLink>
+                                <NavLink to="/login" className='text-decoration-none'><button className="nav-link btn bg-color-sm px-3 fw-bold text-light" type="submit" >{loginIcon}<span className="ms-2">Login</span></button></NavLink>
                             }
                         </li>
                         {/* <li className="nav-item">

@@ -22,7 +22,7 @@ const Reviews = () => {
                     {
                         reviews.map(review =>
                             <div className="col-lg-3 col-12" key={review._id}>
-                                <div className="card d-flex flex-column align-items-center m-2">
+                                <div className="card d-flex flex-column align-items-center m-2 border-radius">
                                     <div style={{ marginTop: "-65px" }} className="card h-100 bg-transparent border border-0">
                                         <img src={review.img} className="w-50 border border-light border-5 mx-auto shadow-lg card-img-top my-3 rounded-pill" alt="" />
                                         <div className="card-body p-4 pt-0">
