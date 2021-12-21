@@ -17,14 +17,20 @@ const Reviews = () => {
         <div className='review-banner'>
             <div className="container px-5">
                 <h2 className="mb-4 text-color fw-bold">Customer Reviews</h2>
-                <p className='text-light mb-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis architecto omnis pariatur sed labore ex magni, excepturi dolorum non minima, voluptatibus magnam, alias totam eius voluptate explicabo qui quas deleniti?</p>
-                <div className="row row-cols-2 row-cols-lg-4 g-3 g-lg-5 text-center">
+                <p className='text-light mb-5 w-75 mx-auto'>Good Quality Material are the two main strengths of our company. Packers use only high quality moving packing material so that we can assure you about the safety of your belongings.</p>
+                <div className="row row-cols-2 row-cols-lg-4 g-3 g-lg-5 text-center mt-5">
                     {
                         reviews.map(review =>
                             <div className="col-lg-3 col-12" key={review._id}>
                                 <div className="card d-flex flex-column align-items-center m-2 border-radius">
-                                    <div style={{ marginTop: "-65px" }} className="card h-100 bg-transparent border border-0">
-                                        <img src={review.img} className="w-50 border border-light border-5 mx-auto shadow-lg card-img-top my-3 rounded-pill" alt="" />
+                                    <div style={{ marginTop: "-70px" }} className="card h-100 bg-transparent border border-0">
+                                        <div className='mx-auto'>
+                                            {
+                                                review.img === 'undefined' ? <img src="https://i.ibb.co/YNvNxpX/149071.png" alt="" className='img-fluid w-50 border border-3 shadow-sm' style={{ borderRadius: '50%' }} /> :
+                                                    review.img === 'null' ? <img src="https://i.ibb.co/YNvNxpX/149071.png" alt="" className='img-fluid w-50 border border-3 shadow-sm' style={{ borderRadius: '50%' }} />
+                                                        : <img src={review.img} alt="" className='img-fluid w-50 border border-3 shadow-sm' style={{ borderRadius: '50%' }} />
+                                            }
+                                        </div>
                                         <div className="card-body p-4 pt-0">
                                             <h6 className="card-title fw-bold text-color mt-2">{review.name}</h6>
                                             <small className="card-text">{review.comment}</small>

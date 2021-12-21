@@ -8,7 +8,7 @@ const AddReview = () => {
     const { user } = useAuth();
 
     const onSubmit = data => {
-        data.photoUrl = `${user.photoURL}`
+        data.img = `${user.photoURL}`
         axios.post('https://peaceful-bastion-73157.herokuapp.com/reviews', data)
             .then(res => {
                 if (res.data.insertedId) {
