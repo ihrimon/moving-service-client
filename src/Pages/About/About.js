@@ -14,8 +14,8 @@ const About = () => {
 
     return (
         <div>
-            <div className='container'>
-                <div className="border-radius">
+            <div>
+                <div className="border-radius bg-light py-3">
                     <div className="d-flex flex-lg-row flex-column align-items-center">
                         <div className="col-12 pt-5 pt-lg-0 text-light text-left color-theme">
                             <h1 className="mt-3 w-75 mx-auto text-color fw-bold" >About Us</h1>
@@ -23,16 +23,15 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div className='container'>
                 <div className="container d-flex flex-lg-row flex-column align-items-lg-center justify-content-between mt-5">
                     <div className="col-lg-6 col-12 me-5">
                         <img src={img} className="w-100" alt="" />
                     </div>
                     <div className=" col-lg-6 col-12 text-start mt-3">
-                        <h5>The Best Camera forever</h5>
-                        <h1 className="text-color">About Waves Photography</h1>
-                        <p>Very Safe, Private, And Spacious Luxury Homes. We'll Help You Go life Safely. Travel Safely With the wonder travel for $2,000 Per Month With No Nightly Rates, Taxes or Fees. First-Class Service.</p>
-                        <Link to="/allProducts"><button className="btn theme-btn text-light px-5 mt-4 rounded-0" type="submit" >Explore...</button></Link>
+                        <h5 className='text-color'>About Our Company</h5>
+                        <h1>We are Top House and Office Shifting Company in the city.</h1>
+                        <p>We utilize state-of-the-art moving equipment to ensure every move we take on begins and ends with the precious memories of your home remaining fully intact and pristine. Our professional movers located in South Florida have years of experience, incredible training, and amazing people skills. We eliminate the stress and hassle of having to move, whether it's down the road or in a different state.</p>
                     </div>
                 </div>
             </div>

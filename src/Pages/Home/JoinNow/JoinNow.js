@@ -11,7 +11,7 @@ const JoinNow = () => {
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>
                     </div>
                     <div className="col-lg-6 col-12">
-                    <Link to="/contact" className="btn btn-light rounded-pill px-5 py-3 text-color fw-bold">JOIN NOW</Link>
+                        <Link to="/contact" className="btn btn-light rounded-pill px-5 py-3 text-color fw-bold">JOIN NOW</Link>
                     </div>
                 </div>
             </div>

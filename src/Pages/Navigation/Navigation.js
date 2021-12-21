@@ -11,7 +11,6 @@ const Navigation = () => {
     // const loginIcon = <FontAwesomeIcon icon={faSignInAlt} />
     // const logoutIcon = <FontAwesomeIcon icon={faSignOutAlt} />
 
-
     const activeStyle = {
         fontWeight: "bold",
         color: "#17c6aa"
@@ -36,18 +35,11 @@ const Navigation = () => {
                         <li className="nav-item">
                             <NavLink className="nav-link" activeStyle={activeStyle} to="about">About Us</NavLink>
                         </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" activeStyle={activeStyle} to="myOrders">Cart</NavLink>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink to="services" className={({ isActive }) =>
-                                    isActive ? 'bg-green-500 font-bold' : 'bg-red-500 font-thin'
-                                }
-                            >
-                                Contact
-                            </NavLink>
-                        </li>
-
+                        {((user.displayName) && (user.photoURL) || (user.email)) &&
+                            <li className="nav-item">
+                                <NavLink className="nav-link" activeStyle={activeStyle} to="myOrders">Cart</NavLink>
+                            </li>
+                        }
                         {
                             ((user.displayName) && (user.photoURL) || (user.email)) &&
                             <li className="nav-item">

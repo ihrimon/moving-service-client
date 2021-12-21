@@ -37,7 +37,7 @@ const Register = () => {
                 <div>
                     <button onClick={handleGoogleSignIn} type="submit" className="btn bg-color-sm text-light me-2">Google login</button>
                 </div>
-                <form onSubmit={handleRegistrationSubmit}  className="w-75 mx-auto mt-3">
+                <form onSubmit={handleRegistrationSubmit} className="w-75 mx-auto mt-3">
                     <p><small>or use your email account</small></p>
                     <div className="form-floating mb-3">
                         <input

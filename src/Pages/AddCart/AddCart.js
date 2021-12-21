@@ -45,12 +45,12 @@ const AddCart = () => {
     return (
         <div>
             <div className="banner">
-            <div className="container bg-color-sm py-2 w-25">
-                <div className="px-5">
-                <h1 className="mt-3 fw-bold fs-1" >Service Details</h1>    
+                <div className="container bg-color-sm py-2 w-25">
+                    <div className="px-5">
+                        <h1 className="mt-3 fw-bold fs-1" >Service Details</h1>
+                    </div>
                 </div>
             </div>
-        </div>
             <div className="container">
                 <div className="row mt-4 g-5">
                     <div className="col-lg-7 col-md-12 col-sm-12 text-center">

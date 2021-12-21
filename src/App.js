@@ -18,7 +18,6 @@ import AddReview from './Pages/AddReview/AddReview';
 import PrivateRoute from './Pages/Authentication/PrivateRoute/PrivateRoute';
 import AddCart from './Pages/AddCart/AddCart';
 
-
 function App() {
   return (
     <div className='App'>
@@ -28,9 +27,9 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="home" element={<Home />} />
-            <Route path="services" element={<Services />}/>
-            <Route path="addCart/:serviceId" element={<AddCart />}/>
-              
+            <Route path="services" element={<Services />} />
+            <Route path="addCart/:serviceId" element={<AddCart />} />
+
             <Route path="about" element={<About />} />
             <Route path="login" element={<Login />} />
             <Route path="register" element={<Register />} />
