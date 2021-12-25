@@ -2,13 +2,48 @@ import React from 'react';
 import logo from '../../images/logo.png';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faPhone, faMapMarkerAlt, faEnvelopeOpen } from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
     const phoneIcon = <FontAwesomeIcon icon={faPhone} />
+    const addressIcon = <FontAwesomeIcon icon={faMapMarkerAlt} />
+    const emailIcon = <FontAwesomeIcon icon={faEnvelopeOpen} />
+
 
     return (
         <div className="bg-color pb-5 mt-5 text-color">
+            <div class="container">
+                <div class="row row-cols-4 row-cols-lg-3 g-5 g-lg-5 py-5 text-light">
+                    <div class="col">
+                        <div class="p-3 d-flex justify-content-center text-start">
+                            <h4 className='bg-color-sm rounded-circle me-4 p-4 m-0'>{phoneIcon}</h4>
+                            <div>
+                                <h4>Phone Call: </h4>
+                                <p>+880184057846</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 d-flex justify-content-center text-start">
+                            <h4 className='bg-color-sm rounded-circle me-4 p-4 m-0'>{addressIcon}</h4>
+                            <div>
+                                <h4>Address:</h4>
+                                <p>City-14, Banani, Dhaka</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="p-3 d-flex justify-content-center text-start">
+                            <h4 className='bg-color-sm rounded-circle me-4 p-4 m-0'>{emailIcon}</h4>
+                            <div>
+                                <h4>Email Us:</h4>
+                                <p>home147@moving.com </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr style={{ border: "1px solid white" }} className='mt-5 ' />
             <div className="container mt-5 pt-5 pb-3">
                 <div>
                     <div className="row text-light">
@@ -53,7 +88,7 @@ const Footer = () => {
                             </NavLink>
                         </div>
                         <div>
-                            <p className="mt-5 mb-0 pb-5 text-start text-light">Copyright ©waves-photography-2021 | This website is made by Imam Hassan Rimon</p>
+                            <p className="mt-5 mb-0 pb-5 text-start text-light">Copyright ©moving-service-2021 | This website is made by Imam Hassan Rimon</p>
                         </div>
                     </div>
 

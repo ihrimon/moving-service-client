@@ -66,9 +66,6 @@ const Navigation = () => {
                                 <NavLink to="/login" className='text-decoration-none'><button className="nav-link btn bg-color-sm px-3 fw-bold text-light" type="submit" >{loginIcon}<span className="ms-2">Login</span></button></NavLink>
                             }
                         </li>
-                        {/* <li className="nav-item">
-                            <NavLink className="nav-link btn bg-color-sm px-5 fw-bold text-light" to="login">Login</NavLink>
-                        </li> */}
                     </ul>
                 </div>
             </div>

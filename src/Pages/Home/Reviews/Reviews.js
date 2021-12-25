@@ -22,13 +22,13 @@ const Reviews = () => {
                     {
                         reviews.map(review =>
                             <div className="col-lg-3 col-12" key={review._id}>
-                                <div className="card d-flex flex-column align-items-center m-2 border-radius">
+                                <div className="card h-100 d-flex flex-column align-items-center m-2 border-radius">
                                     <div style={{ marginTop: "-70px" }} className="card h-100 bg-transparent border border-0">
                                         <div className='mx-auto'>
                                             {
-                                                review.img === 'undefined' ? <img src="https://i.ibb.co/YNvNxpX/149071.png" alt="" className='img-fluid w-50 border border-3 shadow-sm' style={{ borderRadius: '50%' }} /> :
-                                                    review.img === 'null' ? <img src="https://i.ibb.co/YNvNxpX/149071.png" alt="" className='img-fluid w-50 border border-3 shadow-sm' style={{ borderRadius: '50%' }} />
-                                                        : <img src={review.img} alt="" className='img-fluid w-50 border border-3 shadow-sm' style={{ borderRadius: '50%' }} />
+                                                review.img === 'undefined' ? <img src="https://i.ibb.co/YNvNxpX/149071.png" alt="" className='img-fluid border border-3 shadow-sm' style={{ borderRadius: '50%' }} /> :
+                                                    review.img === 'null' ? <img src="https://i.ibb.co/YNvNxpX/149071.png" alt="" className='img-fluid border border-3 shadow-sm' style={{ borderRadius: '50%' }} />
+                                                        : <img src={review.img} alt="" className='img-fluid border border-3 shadow-sm' style={{ borderRadius: '50%', width: "120px" }} />
                                             }
                                         </div>
                                         <div className="card-body p-4 pt-0">

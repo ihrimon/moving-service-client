@@ -1,9 +1,9 @@
 import { createStore, combineReducers } from "redux";
-import bookReducer from "./reducers/bookReducer";
+import serviceReducer from "./Reducers/ServiceReducers";
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 const rootReducer = combineReducers({
-    books: bookReducer,
+    books: serviceReducer,
 })
 
 const store = createStore(rootReducer, composeWithDevTools());
