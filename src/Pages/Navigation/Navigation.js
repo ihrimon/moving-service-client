@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import logo from '../../images/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSignInAlt, faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
+import { faSignInAlt, faSignOutAlt, faCartPlus } from '@fortawesome/free-solid-svg-icons'
 
 const Navigation = () => {
     const { user, logOut } = useAuth();
 
     const loginIcon = <FontAwesomeIcon icon={faSignInAlt} />
     const logoutIcon = <FontAwesomeIcon icon={faSignOutAlt} />
+    const cartIcon = <FontAwesomeIcon icon={faCartPlus} />
 
     const activeStyle = {
         fontWeight: "bold",
@@ -37,7 +38,7 @@ const Navigation = () => {
                         </li>
                         {((user.displayName) && (user.photoURL) || (user.email)) &&
                             <li className="nav-item">
-                                <NavLink className="nav-link" activeStyle={activeStyle} to="myOrders">Cart</NavLink>
+                                <NavLink className="nav-link" activeStyle={activeStyle} to="myOrders">Orders</NavLink>
                             </li>
                         }
                         {
@@ -52,6 +53,14 @@ const Navigation = () => {
                         <li className="nav-item">
                             {
                                 ((user.displayName) && (user.photoURL) || (user?.email)) &&
+                                
+                                    <NavLink to="myOrders"><h5 className='text-color align-items-center justify-content-center text-center'>{cartIcon}</h5></NavLink>
+                                
+                            }
+                        </li>
+                        <li className="nav-item">
+                            {
+                                ((user.displayName) && (user.photoURL) || (user?.email)) &&
                                 <div className="user justify-content-center rounded-pill mx-lg-0  py-1 px-2 mt-1 d-flex align-items-center">
                                     <img src={user.photoURL} style={{ width: '30px' }} className="bg-light rounded-pill user-img" alt="" />
                                     <p className="ms-2 my-2 fw-bold">{user.displayName}</p>
@@ -61,9 +70,9 @@ const Navigation = () => {
 
                         <li className="nav-item">
                             {(user.displayName) && (user.photoURL) || (user?.email) ?
-                                <button onClick={logOut} className="nav-link btn bg-color-sm px-3 fw-bold text-light">{logoutIcon}<span>Log Out</span></button> :
+                                <button onClick={logOut} className="nav-link btn badge bg-color px-3 text-light">{logoutIcon}</button> :
                                 // <NavLink className="nav-link btn bg-color-sm px-5 fw-bold text-light" to="login">Login</NavLink>
-                                <NavLink to="/login" className='text-decoration-none'><button className="nav-link btn bg-color-sm px-3 fw-bold text-light" type="submit" >{loginIcon}<span className="ms-2">Login</span></button></NavLink>
+                                <NavLink to="login" className='text-decoration-none'><button className="nav-link btn bg-color-sm px-3 fw-bold text-light" type="submit" >{loginIcon}<span className="ms-2">Login</span></button></NavLink>
                             }
                         </li>
                     </ul>

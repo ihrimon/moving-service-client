@@ -1,32 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import ShowMoreText from 'react-show-more-text';
 import useAuth from '../../hooks/useAuth';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 
 const Services = () => {
     const [services, setServices] = useState([]);
-    // const cartIcon = <FontAwesomeIcon icon={faCartArrowDown} />
 
     useEffect(() => {
         fetch('https://peaceful-bastion-73157.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data));
     }, []);
-
-    const handleAddToCart = data => {
-        fetch('https://peaceful-bastion-73157.herokuapp.com/orders', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(res => res.json())
-            .then(result => result.data)
-    };
 
     const { isLoading } = useAuth();
     if (isLoading) {
@@ -40,7 +24,7 @@ const Services = () => {
     }
     return (
         <div>
-            <div className="container p-5 my-3">
+            <div className="container p-5 my-5">
                 <h2 className="mb-4 text-center theme-color fw-bold">OUR AWESOME SERVICES</h2>
 
                 <div className="row row-cols-1 row-cols-md-3 g-5 mx-lg-5">

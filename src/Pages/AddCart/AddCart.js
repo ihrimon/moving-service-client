@@ -10,7 +10,7 @@ const AddCart = () => {
     const { serviceId } = useParams();
     const [service, setService] = useState({});
     const { register, handleSubmit, reset } = useForm();
-    const { user } = useAuth();
+    const { user, isLoading } = useAuth();
 
     const shippingIcon = <FontAwesomeIcon icon={faShippingFast} />
     const deliveryIcon = <FontAwesomeIcon icon={faFileInvoiceDollar} />
@@ -41,6 +41,16 @@ const AddCart = () => {
                 }
             })
     };
+
+    if (isLoading) {
+        return (
+            <div className="d-flex justify-content-center align-items-center load-spinner">
+                <div className="d-flex justify-content-center spinner-grow text-success" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div>
@@ -108,12 +118,12 @@ const AddCart = () => {
                                     </div>
 
                                     <div className="mb-3">
-                                        <label htmlFor="exampleFormControlInput1" className="form-label">Product Title</label>
+                                        <label htmlFor="exampleFormControlInput1" className="form-label">Service Title</label>
                                         {service.name && <input type="text" className="form-control" id="exampleFormControlInput1" defaultValue={service.name} {...register("productTitle", { required: true })} />}
                                     </div>
 
                                     <div className="mb-3">
-                                        <label htmlFor="exampleFormControlInput1" className="form-label">Product Price</label>
+                                        <label htmlFor="exampleFormControlInput1" className="form-label">Service Charge</label>
                                         {service.price && <input type="text" className="form-control" id="exampleFormControlInput1" defaultValue={service.price} {...register("price", { required: true })} />}
                                     </div>
 
@@ -123,7 +133,7 @@ const AddCart = () => {
                                     </div>
 
                                     <div className="w-50 mx-auto">
-                                        <button type="submit" className="btn bg-color-sm px-5 text-light my-3 text-center mx-auto"> <span className="ms-2">Submit</span></button>
+                                        <button type="submit" className="btn bg-color-sm px-3 text-light my-3 text-center">{submitIcon}<span className="ms-2">Add Cart</span></button>
                                     </div>
                                 </form>
                             </div>

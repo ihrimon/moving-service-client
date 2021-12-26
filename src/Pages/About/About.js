@@ -9,8 +9,6 @@ const About = () => {
     const GuaranteeIcon = <FontAwesomeIcon icon={faCog} />
     const supportIcon = <FontAwesomeIcon icon={faHeadset} />
 
-
-
     return (
         <div>
             <div>

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Rating from 'react-rating';
-// import Rating from 'react-rating';
 import './Review.css';
-// import Rating from 'react-rating';
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -18,13 +16,13 @@ const Reviews = () => {
             <div className="container px-5">
                 <h2 className="mb-4 text-color fw-bold">Customer Reviews</h2>
                 <p className='text-light mb-5 w-75 mx-auto'>Good Quality Material are the two main strengths of our company. Packers use only high quality moving packing material so that we can assure you about the safety of your belongings.</p>
-                <div className="row row-cols-2 row-cols-lg-4 g-3 g-lg-5 text-center mt-5">
+                <div className="row row-cols-2 row-cols-lg-4 g-5 g-lg-5 text-center mt-5">
                     {
                         reviews.map(review =>
-                            <div className="col-lg-3 col-12" key={review._id}>
+                            <div className="col-lg-3 col-12" style={{ marginBottom: "70px" }} key={review._id}>
                                 <div className="card h-100 d-flex flex-column align-items-center m-2 border-radius">
-                                    <div style={{ marginTop: "-70px" }} className="card h-100 bg-transparent border border-0">
-                                        <div className='mx-auto'>
+                                    <div  className="card bg-transparent border border-0">
+                                        <div className='mx-auto' style={{ marginTop: "-70px" }}>
                                             {
                                                 review.img === 'undefined' ? <img src="https://i.ibb.co/YNvNxpX/149071.png" alt="" className='img-fluid border border-3 shadow-sm' style={{ borderRadius: '50%' }} /> :
                                                     review.img === 'null' ? <img src="https://i.ibb.co/YNvNxpX/149071.png" alt="" className='img-fluid border border-3 shadow-sm' style={{ borderRadius: '50%' }} />

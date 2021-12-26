@@ -20,7 +20,7 @@ import AddCart from './Pages/AddCart/AddCart';
 
 function App() {
   return (
-    <div className='App'>
+    <div className='App scroll-behavior'>
       <AuthProvider>
         <BrowserRouter>
           <Navigation></Navigation>

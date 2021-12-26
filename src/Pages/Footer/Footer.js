@@ -9,12 +9,11 @@ const Footer = () => {
     const addressIcon = <FontAwesomeIcon icon={faMapMarkerAlt} />
     const emailIcon = <FontAwesomeIcon icon={faEnvelopeOpen} />
 
-
     return (
         <div className="bg-color pb-5 mt-5 text-color">
             <div class="container">
                 <div class="row row-cols-4 row-cols-lg-3 g-5 g-lg-5 py-5 text-light">
-                    <div class="col">
+                    <div class="col-lg-4 col-12">
                         <div class="p-3 d-flex justify-content-center text-start">
                             <h4 className='bg-color-sm rounded-circle me-4 p-4 m-0'>{phoneIcon}</h4>
                             <div>
@@ -23,7 +22,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-lg-4 col-12">
                         <div class="p-3 d-flex justify-content-center text-start">
                             <h4 className='bg-color-sm rounded-circle me-4 p-4 m-0'>{addressIcon}</h4>
                             <div>
@@ -32,7 +31,7 @@ const Footer = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="col">
+                    <div class="col-lg-4 col-12">
                         <div class="p-3 d-flex justify-content-center text-start">
                             <h4 className='bg-color-sm rounded-circle me-4 p-4 m-0'>{emailIcon}</h4>
                             <div>

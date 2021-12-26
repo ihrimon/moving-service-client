@@ -1,12 +1,11 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
-import Services from '../Services/Services';
 
 
 const MyOrders = () => {
     const [myOrders, setMyOrders] = useState([]);
-    const { user } = useAuth();
+    const { user, isLoading } = useAuth();
 
     const email = user.email
 
@@ -33,11 +32,21 @@ const MyOrders = () => {
         }
     }
 
+    if (isLoading) {
+        return (
+            <div className="d-flex justify-content-center align-items-center load-spinner">
+                <div className="d-flex justify-content-center spinner-grow text-danger" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        )
+    }
+
     return (
         <div className="container">
-            <h2 className="mt-5 mb-3 text-center">My Orders</h2>
-            <div className='row justify-content-center '>
-                <div className="table-responsive col-lg-8 col-12 me-3">
+            <h2 className="mt-5 mb-3 text-center fw-bold">My Orders {myOrders.length}</h2>
+            <div className='row justify-content-center'>
+                <div className="table-responsive col-lg-8 col-12 me-3 mb-5">
                     <table className="table border table-hover">
                         <thead className="bg-color text-light py-5">
                             <tr>

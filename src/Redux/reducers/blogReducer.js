@@ -1,18 +1,18 @@
-import services from './services.json'
-    const initialState = {
-    discover: services,
+import blogs from './blogs.json';
+const initialState = {
+    discover: blogs,
     readingList: [],
     finishedList: []
 }
 
-function ServiceReducer(state = initialState, action) {
+function blogReducer(state = initialState, action) {
     switch(action.type) {
         case 'ADD_TO_READING_LIST': {
             const newState = {...state, readingList: [...state.readingList, action.payload] }
             return newState
         }
         case 'REMOVE_FROM_READING_LIST': {
-            const newState = {...state, readingList: state.readingList.filter((service) => service.id !== action.payload )}
+            const newState = {...state, readingList: state.readingList.filter((book) => book.id !== action.payload )}
              
             return newState
         }
@@ -21,4 +21,4 @@ function ServiceReducer(state = initialState, action) {
     }
 }
 
-export default ServiceReducer;
+export default blogReducer;

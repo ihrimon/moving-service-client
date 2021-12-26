@@ -77,3 +77,8 @@
 .hover:hover button{
   background-color: #0e2333;
 }
+
+
+.scroll-behavior{
+  scroll-behavior: smooth;
+}
